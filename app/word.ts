@@ -1,6 +1,6 @@
 import {letterManager} from './letters';
 let x = 10
-let y = -300
+let y = -100
 for (let word of ["helloworld","cjrocks", "goodjob", "javascript", "havingfun", "keepplaying", "youaresoclose", "bossisnext", "supercalifragilisticexpialidocious"]) {
     y -= 300
     x = 0
