@@ -11,7 +11,7 @@ export const scoreboard = {
       `Score: ${this.score}`, 
       50,50
     );
-    if(scoreboard.score > 25) {
+    if(scoreboard.score > 100) {
       goodJobManager.display = true;
     }
     if (scoreboard.score < 0) {

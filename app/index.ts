@@ -11,3 +11,4 @@ scoreboard.draw()
 addAnimation(scoreboard)
 // run animation
 startAnimation();
+import './word';

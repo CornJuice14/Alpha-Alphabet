@@ -2,6 +2,7 @@ import { ctx, canvas } from './canvas2'
 import {goodJobManager} from './goodJobManager'
 import {scoreboard} from './scoreboard'
 
+
 export const letterManager = {
   letters: [
     { x: Math.random() * canvas.width, y: 50, letter: "a", matched: false },
@@ -44,7 +45,7 @@ export const letterManager = {
   update() {
     this.letters.forEach(
       (letter) => {
-        letter.y += 2.5;
+        letter.y += 1;
         letter.x += 1.5;
         if (letter.y > canvas.height) {
           letter.y = 0;
@@ -65,15 +66,21 @@ export const letterManager = {
 window.addEventListener(
   'keypress',
   function(event) {
+    let correct = false
     letterManager.letters.forEach(
       (letter) => {
+        if (correct) {return}
         if (letter.letter == event.key) {
           letter.matched = true //will match all letters
           if(letter.y > 0) {
           scoreboard.score += 1
-        }
+            correct = true
+          }
         }  
       }
     )
+    if (!correct) {
+      scoreboard.score -= 1
+    }
   }
 )
